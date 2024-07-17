@@ -6,9 +6,10 @@ namespace VehicleManagementApi.Repositories;
 
 public interface IVehicleRepository
 {
-    IEnumerable<Car> GetCarsByColor(Color color);
-    IEnumerable<Bus> GetBusesByColor(Color color);
-    IEnumerable<Boat> GetBoatsByColor(Color color);
+    IEnumerable<VehicleTotal> GetAllVehicles();
+    IEnumerable<VehicleTotal> GetCarsByColor(Color color);
+    IEnumerable<VehicleTotal> GetBusesByColor(Color color);
+    IEnumerable<VehicleTotal> GetBoatsByColor(Color color);
     Car? GetCarById(int id);
     void ToggleCarHeadlights(int id);
     void DeleteCar(int id);

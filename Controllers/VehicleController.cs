@@ -3,6 +3,7 @@
 using Microsoft.AspNetCore.Mvc;
 using VehicleManagementApi.Models;
 using VehicleManagementApi.Services;
+using VehicleManagementApi.Helpers;
 
 namespace VehicleManagementApi.Controllers;
 
@@ -17,24 +18,49 @@ public class VehiclesController : ControllerBase
         _vehicleService = vehicleService;
     }
 
-    [HttpGet("cars")]
-    public IActionResult GetCarsByColor([FromQuery] Color color)
+    [HttpGet]
+    public IActionResult GetAllVehicles()
     {
-        var cars = _vehicleService.GetCarsByColor(color);
+        var vehicles = _vehicleService.GetAllVehicles();
+        return Ok(vehicles);
+    }
+
+    [HttpGet("cars")]
+    public IActionResult GetCarsByColor([FromQuery] string color)
+    {
+        if (!ColorValidator.IsValidColor(color))
+        {
+            return NotFound($"Color '{color}' is not valid. Valid colors are: Red, Blue, Black, White.");
+        }
+
+        var parsedColor = Enum.Parse<Color>(color, true);
+        var cars = _vehicleService.GetCarsByColor(parsedColor);
         return Ok(cars);
     }
 
     [HttpGet("buses")]
-    public IActionResult GetBusesByColor([FromQuery] Color color)
+    public IActionResult GetBusesByColor([FromQuery] string color)
     {
-        var buses = _vehicleService.GetBusesByColor(color);
+        if (!ColorValidator.IsValidColor(color))
+        {
+            return NotFound($"Color '{color}' is not valid. Valid colors are: Red, Blue, Black, White.");
+        }
+
+        var parsedColor = Enum.Parse<Color>(color, true);
+        var buses = _vehicleService.GetBusesByColor(parsedColor);
         return Ok(buses);
     }
 
     [HttpGet("boats")]
-    public IActionResult GetBoatsByColor([FromQuery] Color color)
+    public IActionResult GetBoatsByColor([FromQuery] string color)
     {
-        var boats = _vehicleService.GetBoatsByColor(color);
+        if (!ColorValidator.IsValidColor(color))
+        {
+            return NotFound($"Color '{color}' is not valid. Valid colors are: Red, Blue, Black, White.");
+        }
+
+        var parsedColor = Enum.Parse<Color>(color, true);
+        var boats = _vehicleService.GetBoatsByColor(parsedColor);
         return Ok(boats);
     }
 
