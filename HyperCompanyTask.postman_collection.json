@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "10aee0ca-9e5d-4b7a-8b69-e0945b5f5dd2",
+		"name": "HyperCompany",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16229368"
+	},
+	"item": [
+		{
+			"name": "Get Car",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5068/api/vehicles/cars?color=Green",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5068",
+					"path": [
+						"api",
+						"vehicles",
+						"cars"
+					],
+					"query": [
+						{
+							"key": "color",
+							"value": "Green"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5068/api/vehicles/buses?color=White",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5068",
+					"path": [
+						"api",
+						"vehicles",
+						"buses"
+					],
+					"query": [
+						{
+							"key": "color",
+							"value": "White"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Boat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5068/api/vehicles/boats?color=Blue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5068",
+					"path": [
+						"api",
+						"vehicles",
+						"boats"
+					],
+					"query": [
+						{
+							"key": "color",
+							"value": "Blue"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Toggle Headlights",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5068/api/vehicles/cars/1/headlights",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5068",
+					"path": [
+						"api",
+						"vehicles",
+						"cars",
+						"1",
+						"headlights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Car",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5068/api/vehicles/cars/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5068",
+					"path": [
+						"api",
+						"vehicles",
+						"cars",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllVehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5068/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5068",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
